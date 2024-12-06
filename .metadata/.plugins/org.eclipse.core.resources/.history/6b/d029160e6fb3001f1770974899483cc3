@@ -1,0 +1,40 @@
+package org.sist.sb06_sbb.domain;
+
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+public class helloLombok {
+
+	private String hello;
+	private int lombok;
+	//@data 사용하지 말것 
+	public static void main(String[] args) {
+		
+		//System.out.println("heool world");
+		helloLombok helloLombok = new helloLombok();
+				
+		System.out.println(helloLombok.getHello());
+		System.out.println(helloLombok.getLombok());
+		
+		
+	}
+/*	
+	private String hello;
+	private int lombok;
+	//@data 사용하지 말것 
+	public static void main(String[] args) {
+
+		//System.out.println("heool world");
+		helloLombok helloLombok = new helloLombok();
+		helloLombok.setHello("헬로");
+		helloLombok.setLombok(5);
+		
+		System.out.println(helloLombok.getHello());
+		System.out.println(helloLombok.getLombok());
+
+
+	}
+	*/
+
+}

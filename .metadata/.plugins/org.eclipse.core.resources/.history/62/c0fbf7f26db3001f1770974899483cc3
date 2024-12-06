@@ -1,0 +1,5 @@
+package org.sist.sb06_sbb.domain;
+
+public class helloLombok {
+
+}

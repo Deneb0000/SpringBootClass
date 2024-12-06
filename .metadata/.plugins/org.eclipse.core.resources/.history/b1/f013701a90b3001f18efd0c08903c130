@@ -1,0 +1,5 @@
+package org.sist.sb06_sbb2.answer;
+
+public interface AnswerRepository {
+
+}

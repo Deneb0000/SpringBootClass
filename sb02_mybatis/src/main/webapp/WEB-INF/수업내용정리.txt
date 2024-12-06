@@ -1,0 +1,4 @@
+[스프링 부트 프로젝트 생성]
+c<class<springBootClasss
+ㄴsb01_jsp 복사 + 붙이기 sb02_mybatis 프로젝트명 수정.
+ㄴMybatis 설정 ... 완료

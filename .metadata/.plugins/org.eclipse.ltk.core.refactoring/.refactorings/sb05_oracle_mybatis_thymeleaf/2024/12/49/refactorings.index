@@ -1,0 +1,22 @@
+1733366453886	Rename package 'org.sist.sb04_oracle_mybatis_jsp'
+1733366481331	Rename type 'Sb04OracleMybatisJspApplication'
+1733366509071	Rename package 'org.sist.sb04_oracle_mybatis_jsp.controller'
+1733366524401	Rename package 'org.sist.sb04_oracle_mybatis_jsp.domain'
+1733366538416	Rename package 'org.sist.sb04_oracle_mybatis_jsp.persistence'
+1733366549661	Rename package 'org.sist.sb04_oracle_mybatis_jsp.service'
+1733366594845	Rename package 'org.sb04_oracle_mybatis_jsp'
+1733366846967	Rename package 'orgsb05_oracle_mybatis_thymeleaf.controller'
+1733366869244	Rename package 'org.sb05_oracle_mybatis_thymeleaf.controller'
+1733366976972	Rename package 'org.sist.sb04_oracle_mybatis_jsp'
+1733366999396	Rename type 'Sb04OracleMybatisJspApplication'
+1733367018581	Rename package 'org.sist.sb04_oracle_mybatis_jsp.controller'
+1733367043317	Rename package 'org.sist.sb04_oracle_mybatis_jsp.domain'
+1733367064713	Rename package 'org.sist.sb04_oracle_mybatis_jsp.service'
+1733367077784	Rename package 'org.sist.sb04_oracle_mybatis_jsp.persistence'
+1733367137355	Rename package 'org.sb04_oracle_mybatis_jsp'
+1733367157389	Rename type 'Sb04OracleMybatisJspApplicationTests'
+1733369254251	Copy folder
+1733369267368	Rename resource 'list.jsp'
+1733369304918	Copy file
+1733369311902	Rename resource 'index.jsp'
+1733370540120	Delete element

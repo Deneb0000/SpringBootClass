@@ -1,0 +1,21 @@
+spring.application.name=sb06_sbb2
+
+server.port=80
+
+#h2 Database 설정부분
+spring.h2.console.enabled=true
+spring.h2.console.path=/h2-console
+
+#local
+spring.datasource.url=jdbc:h2~/local
+
+spring.datasource.driver-class-name=org.h2.Driver
+spring.datasource.username=sa
+spring.datasource.password=
+
+#JPA와 관련된 설정				┌방언? 실제 DB에 맞춰서 처리하는 엔티티 클래스로 세이브	ex)오라클이면 oracle.dialect가 되어야함
+spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.H2Dialect
+spring.jpa.hibernate.ddl-auto=update
+
+spring.jpa.properties.hibernate.format_sql=true 
+spring.jpa.properties.hibernate.show_sql=true

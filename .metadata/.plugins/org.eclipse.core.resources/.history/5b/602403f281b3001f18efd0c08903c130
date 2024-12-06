@@ -1,0 +1,21 @@
+package org.sist.sb06_sbb2.answer;
+
+import java.time.LocalDateTime;
+
+import org.sist.sb06_sbb2.question.Question;
+
+import jakarta.persistence.Entity;
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
+@Entity
+public class Answer {
+
+	private Integer id;
+	private String content;
+	private LocalDateTime createDate;
+
+	private Question question; //포링키 
+}

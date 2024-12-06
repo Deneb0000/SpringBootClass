@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="Sb06Sbb2ApplicationTests" project="sb06_sbb2" tests="1" started="1" failures="0" errors="1" ignored="0">
+  <testsuite name="org.sist.sb06_sbb2.Sb06Sbb2ApplicationTests" time="0.004" displayname="Sb06Sbb2ApplicationTests" uniqueid="[engine:junit-jupiter]/[class:org.sist.sb06_sbb2.Sb06Sbb2ApplicationTests]">
+    <testcase name="testJpa" classname="org.sist.sb06_sbb2.Sb06Sbb2ApplicationTests" time="0.004" displayname="testJpa()" uniqueid="[engine:junit-jupiter]/[class:org.sist.sb06_sbb2.Sb06Sbb2ApplicationTests]/[method:testJpa()]">
+      <error>java.lang.Error: Unresolved compilation problem: 
+	Syntax error, insert "}" to complete ClassBody
+&#13;
+	at org.sist.sb06_sbb2.Sb06Sbb2ApplicationTests.&lt;init&gt;(Sb06Sbb2ApplicationTests.java:81)&#13;
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)&#13;
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)&#13;
+	at java.base/java.util.Optional.orElseGet(Optional.java:364)&#13;
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)&#13;
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)&#13;
+&#13;
+</error>
+    </testcase>
+  </testsuite>
+</testrun>

@@ -1,0 +1,16 @@
+sb01_jps 프로젝트명
+
+src / main / resources 패키지
+ㄴstatic 정적 패이지 (css,js)
+ㄴ tamplates 템플릿 폴더
+application.properties 파일 : 어플리케이션의 환경설정 파일
+ ㄴ spring.application.name=sb01_jsp
+ 		키값				=  
+ 		
+
+ 		
+http://localhost/index 요청URL -> index.jsp 응답.
+
+org.sist.sb01_jsp.Sb01JspApplication.java + main()()
+						(프로젝트명 + Application.java)
+ -> 컨트롤러 먼저 만들기 indexController

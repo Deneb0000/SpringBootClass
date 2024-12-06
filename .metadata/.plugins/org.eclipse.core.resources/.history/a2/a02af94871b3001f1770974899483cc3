@@ -1,0 +1,13 @@
+package org.sist.sb06_sbb.controller;
+
+import org.springframework.stereotype.Controller;
+
+@Controller
+public class MainController {
+
+	@GetMapping("/sbb")
+	public void index() {
+System.out.println("index");
+	}
+	
+}

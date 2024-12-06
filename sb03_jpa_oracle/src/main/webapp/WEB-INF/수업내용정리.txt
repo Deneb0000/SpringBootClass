@@ -1,0 +1,135 @@
+[스프링 부트 프로젝트 생성]	jdk 17 이상~
+c<class<springBootClasss
+ㄴsb02_mybatis 복사 + 붙이기 sb03_jpa_oracle 프로젝트명 수정.
+
+-JPA + Oracle 연동 예제
+	ㄴ (인터페이스) ORM 기술의 한 종류
+	
+	구현체 : 하이브네이트?????
+	
+	
+	### **ORM (Object-Relational Mapping) 설명**
+
+ORM은 객체와 관계형 데이터베이스를 매핑하여 객체지향 프로그래밍 언어와 데이터베이스 간의 간극을 해소하는 기법입니다.
+
+- **목적**: 데이터베이스 테이블의 데이터를 객체로 변환하거나 객체를 데이터베이스 테이블에 저장하는 과정을 자동화하여 개발 생산성을 높이고 유지보수를 용이하게 합니다.
+- **장점**:
+  1. SQL을 직접 작성할 필요가 적어짐.
+  2. 객체지향 언어의 장점을 그대로 활용 가능.
+  3. 데이터베이스 독립성 확보 (DB 변경 시 코드 수정 최소화).
+- **단점**:
+  1. 학습 곡선이 높을 수 있음.
+  2. 복잡한 쿼리에서는 성능이 저하될 가능성.
+
+---
+
+### **JPA (Java Persistence API)**
+
+JPA는 자바 표준 ORM 기술입니다. 자바 객체와 데이터베이스 테이블을 매핑하고 영속성 관리를 표준화합니다.
+
+#### **JPA의 주요 특징**
+1. **Entity 중심**: 데이터베이스의 테이블을 자바 객체로 매핑.
+2. **JPQL (Java Persistence Query Language)**: SQL과 유사한 문법으로 객체를 대상으로 질의.
+3. **데이터베이스 독립성**: 데이터베이스 변경 시 영향을 최소화.
+4. **캐시 지원**: 1차 캐시(영속성 컨텍스트)를 통해 성능 최적화.
+
+#### **JPA 사용 예제**
+```java
+@Entity
+public class User {
+    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    private String name;
+
+    // Getters and setters
+}
+
+@Repository
+public class UserRepository {
+    @PersistenceContext
+    private EntityManager em;
+
+    public void save(User user) {
+        em.persist(user);
+    }
+
+    public User find(Long id) {
+        return em.find(User.class, id);
+    }
+}
+```
+
+#### **JPA의 장점**
+1. 표준 인터페이스로 유지보수가 쉬움.
+2. 데이터베이스 테이블과 객체 매핑 자동화.
+3. JPQL을 통한 객체 중심 질의.
+
+#### **JPA의 단점**
+1. 복잡한 설정 필요.
+2. 러닝 커브가 있음.
+3. 복잡한 쿼리에서는 Native SQL 필요.
+
+---
+
+### **Hibernate (하이버네이트)**
+
+Hibernate는 JPA의 구현체 중 하나로, 가장 널리 사용되는 ORM 프레임워크입니다. JPA 표준을 따르지만, JPA가 지원하지 않는 추가 기능을 제공합니다.
+
+#### **Hibernate의 주요 특징**
+1. JPA의 표준 구현체로 동작.
+2. **HQL (Hibernate Query Language)**: JPQL과 유사하지만 Hibernate 고유의 확장 기능 포함.
+3. **Lazy Loading**: 연관 데이터 로드를 지연 처리하여 성능 최적화.
+4. **Cascade Operation**: 엔터티 간의 관계를 정의하고 연쇄 작업을 지원.
+
+#### **Hibernate의 장점**
+1. JPA의 모든 장점 제공.
+2. 성능 최적화를 위한 다양한 기능 (2차 캐시, 배치 처리 등).
+3. 다양한 데이터베이스 지원 및 확장 기능.
+
+#### **Hibernate 사용 예제**
+```java
+@Entity
+public class User {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    private String name;
+}
+
+Session session = HibernateUtil.getSessionFactory().openSession();
+Transaction transaction = session.beginTransaction();
+
+User user = new User();
+user.setName("John");
+session.save(user);
+
+transaction.commit();
+session.close();
+```
+
+#### **Hibernate의 단점**
+1. JPA 표준 외의 기능을 사용할 경우 다른 구현체로의 변경이 어려움.
+2. 복잡한 설정.
+
+---
+
+### **JPA vs Hibernate**
+
+| **항목**          | **JPA**                                | **Hibernate**                          |
+|-------------------|---------------------------------------|---------------------------------------|
+| **역할**           | Java ORM 표준 인터페이스             | JPA의 구현체, 독립적인 ORM 프레임워크 |
+| **학습 곡선**      | 낮음 (표준 인터페이스)                | 높음 (JPA + 확장 기능)                |
+| **표준 준수**      | 완전한 표준 준수                     | 표준 준수 + Hibernate 전용 기능       |
+| **사용 범위**       | 데이터베이스 독립성 및 간단한 작업에 적합 | 성능 최적화 및 복잡한 작업에 적합     |
+
+---
+
+### **결론**
+
+1. **JPA**는 표준이므로 여러 구현체로 교체 가능하며, 단순한 프로젝트에서 효과적입니다.
+2. **Hibernate**는 JPA보다 고급 기능을 제공하며 대규모 프로젝트에서 강력한 성능과 확장성을 제공합니다.
+3. JPA를 기본으로 시작하고, 필요할 경우 Hibernate의 추가 기능을 활용하는 방식이 일반적입니다.
+
+
