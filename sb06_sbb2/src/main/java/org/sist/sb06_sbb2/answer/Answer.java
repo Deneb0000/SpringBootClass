@@ -4,6 +4,7 @@ import java.time.LocalDateTime;
 
 import org.sist.sb06_sbb2.question.Question;
 
+import groovy.transform.builder.Builder;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -16,6 +17,7 @@ import lombok.Setter;
 @Getter
 @Setter
 @Entity // 엔티티에서는 setter 안써도 된다. / 있어도 문제는 없다.
+//@Builder
 public class Answer {
    
    @Id

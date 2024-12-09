@@ -157,7 +157,7 @@ class Sb06Sbb2ApplicationTests {
 		Optional<Question> optional = 	this.questionRepository.findById(2);
 		if (optional.isPresent()) {
 			Question q = optional.get();
-			List<Answer> answerList = q.getAnswersList();
+			List<Answer> answerList = q.getAnswerList();
 			answerList.stream().forEach(a -> System.out.println("answer :"+ a.getContent()));
 		}
 		

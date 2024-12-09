@@ -92,6 +92,65 @@ testImplementation 'org.junit.jupiter:junit-jupiter'
 testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
     
 //Repository 를 물려받아서 CrudRepository 인터페이스가 만들어깆고
+		//Repository
+		//CrudRepository
 		//PagingAndSortRepository
 		//JpaRepository    
+
+
+question 질문 패키지
++QuestControtller.java 클래스 추가
+
+1.템플릿 엔진 : 템플릿(html + 자바코딩)을 사용하기 위해
+스프링 부트에서 제공되는 엔진 지원 (Thymeleaf, Mustache, Groovy, Freemarker, Velocity 등)
+2.Thymeleaf - https://www.thymeleaf.org/
+3. // thymeleaf 모듈
+   implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
+    implementation 'nz.net.ultraq.thymeleaf:thymeleaf-layout-dialect'
+4. /question/list 요청
+5. templates > question > html.list 만들기
+6. 컨트롤러 -> [서비스] -> 리파지토리 
+	1) 트랜잭션 처리
+	2) 복잡한 코드를 모듈화 할수 있다.	-여기까진 레거시와 같은 코딩인데
+** 3) 엔티티객체 -> DTO 객체 변환
+		엔티티 객체를 데이터를 보내는 DTO 객체로 변환할 수 있다.	
+
+6-2. QuestionService 클래스 추가 
+
+loop.index: 루프의 순서(루프의 반복 순서, 0부터 1씩 증가)
+loop.count: 루프의 순서(루프의 반복 순서, 1부터 1씩 증가)
+loop.size: 반복 객체의 요소 개수(예를 들어 questionList의 요소 개수)
+loop.first: 루프의 첫 번째 순서인 경우 true
+loop.last: 루프의 마지막 순서인 경우 true
+loop.odd: 루프의 홀수 번째 순서인 경우 true
+loop.even: 루프의 짝수 번째 순서인 경우 true
+loop.current: 현재 대입된 객체(여기서는 question과 동일)
+
+7. 질문 상세 보기
+[전] + [서] + [러]
+						findById()
+						
+8. 답변 기능
+	1) detail.html
+		답변 작성 입력태그 구성. . . + 원칙적으로는 처리가 ajax 되어야한다
+		지금은 일단 <form>태그
+		
+		/answer/create/${question.id} 컨트롤러 처리
+		
+	2) 답변 서비스 		추가
+		답변 기파지토리  수정
+		
+9. 웹 페이지 디자인
+
+10. 부트 스트렙ㅇ을 사용
+https://getbootstrap.com
+
+11. 페이징 모듈화...
+
+만약 : html 문서 구조화 body 요소를 제외한 모든 부분이 동일해서 중복.
+	타임리프에서는 이런 중복을 제거하기 위해서 "템플릿 상속" 이라는 기능을 제공한다.
+		템플릿 상속
+		1) 기본 틀이 되는 템플릿을 먼저 작성
+		2) 작성된 템플릿을 상속해서, html 구조를 완성/완료  한다.
+		
 

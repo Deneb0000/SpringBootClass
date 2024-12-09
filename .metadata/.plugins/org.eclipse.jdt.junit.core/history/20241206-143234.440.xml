@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?><testrun name="Sb06Sbb2ApplicationTests" project="sb06_sbb2" tests="1" started="1" failures="0" errors="0" ignored="0">
-  <testsuite name="org.sist.sb06_sbb2.Sb06Sbb2ApplicationTests" time="0.361" displayname="Sb06Sbb2ApplicationTests" uniqueid="[engine:junit-jupiter]/[class:org.sist.sb06_sbb2.Sb06Sbb2ApplicationTests]">
-    <testcase name="testJpa" classname="org.sist.sb06_sbb2.Sb06Sbb2ApplicationTests" time="0.361" displayname="testJpa()" uniqueid="[engine:junit-jupiter]/[class:org.sist.sb06_sbb2.Sb06Sbb2ApplicationTests]/[method:testJpa()]"/>
-  </testsuite>
-</testrun>

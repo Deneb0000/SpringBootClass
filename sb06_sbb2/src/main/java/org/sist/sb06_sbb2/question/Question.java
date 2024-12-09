@@ -18,7 +18,7 @@ import lombok.Setter;
 
 @Getter
 @Setter
-@Entity
+@Entity //엔티티에서는 Seter 안써도 된다.(DTO롤 사용하지 않기 때문에)/있어도 문제는 없다.
 public class Question {
    
    @Id
@@ -34,6 +34,6 @@ public class Question {
    private LocalDateTime createDate; //
    
    @OneToMany(mappedBy = "question", cascade = CascadeType.REMOVE, fetch = FetchType.EAGER)	// 부모가 사라지면 자식도 사라진다 질문을 삭제하면 답글도 제거하겠다는 옵션
-   private List<Answer> answersList;                                        						//ㄴ FetchType.EAGER/Lazy 기억하기
+   private List<Answer> answerList;                                        						//ㄴ FetchType.EAGER/Lazy 기억하기
    
 }
