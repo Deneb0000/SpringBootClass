@@ -1,10 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<item key="hasShownOverlayPopupBefore" value="true"/>
-	<item key="replaceBarOpen" value="false"/>
+	<item key="replaceBarOpen" value="true"/>
 	<list key="searchhistory">
-		<item value="sb0"/>
-		<item value="javax.servlet"/>
-		<item value="tomcat-embed-jasper"/>
+		<item value="swiper-wrapper"/>
+		<item value="swiper-slide"/>
+		<item value=".swiper-container-android .swiper-slide,"/>
+		<item value="common"/>
+		<item value="교육센터소개"/>
+		<item value="교육센터"/>
+		<item value="센터소개"/>
+		<item value="gnb"/>
+		<item value="png"/>
+		<item value="교육센터소"/>
+		<item value="bootstrap-3.3.2-dist/css/bootstrap.css"/>
+		<item value="/js/function.js"/>
+		<item value="header_blank"/>
+		<item value="body"/>
+		<item value="hover"/>
+	</list>
+	<list key="replacehistory">
+		<item value="th:src=&quot;@{"/>
+		<item value="f=&quot;@{"/>
+		<item value="th:href"/>
 	</list>
 </section>

@@ -1,0 +1,64 @@
+[수업내용정리]
+
+*** 이거 PageDTO / Criteria.java 사용한 예제임!!! 페이징처리!!했음!!
+
+sb06_sbb4
+
+1. 네비게이션바(메뉴바) 추가하기 - layout.html 파일에 추가하자.
+   사이즈 줄이면 햄버거 메뉴 버튼 나옴.
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="/">SBB</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">로그인</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
+2. layout.html에서 네비게이션 메뉴 바를 분리. (모듈화)
+
+
+3. 페이징처리!!
+
+   - 따로 설치할 모듈은 없음 --> JPA 모듈안에 페이징 관련 패키지 포함되어있음.
+   
+     1) org.spring.d.d.Page 클래스
+         ㄴ 페이징을 위한 클래스
+         
+     2) o.s.d.d.PageRequest 클래스 
+         ㄴ 현재 페이지번호 + 한페이지 출력 게시글수 설정 -> 페이징처리 요청하는 클래스
+         
+     3) o.s.d.d.PAgeable 인터페이스
+         ㄴ 페이징 처리하는 인터페이스
+         
+    JSP) 
+    모든 게시글 조회하는 selectAll() 만들었었음.
+    모든 게시글 조회 + 페이징처리 selectAll() 만들었었음.
+    
+    
+    >> 게시글 번호 붙여보자. id로 바꿔봐도될듯.
+       페이징처리 추가적으로 해보쟈. 10개 단위로 끊어서.
+       
+  list.html에서 답글갯수를 출력해보자.
+  글번호	제목	작성일시
+           제목...(2) <- 답글갯수
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         

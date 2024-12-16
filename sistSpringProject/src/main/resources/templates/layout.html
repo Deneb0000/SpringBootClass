@@ -1,0 +1,147 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<title>쌍용교육센터</title>
+<link rel="icon" th:href="@{/img/favicon.ico}" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width,initial-scale=1.0" />
+<meta name="format-detection" content="telephone=no">
+<meta name="description" content="자바 기반 풀스택 과정, 고용노동부 지정 우수훈련기관, 100%무료교육, 취업지원 진행" />
+<meta name="keywords" content="검색키워드등록" />
+<meta name="classification" content="검색사이트 카테고리 등록" />
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" type="text/css" th:href="@{/css/layout.css}">
+<link rel="stylesheet" type="text/css" th:href="@{/css/basic.css}">
+<link rel="stylesheet" type="text/css" th:href="@{/css/montserrat.css}">
+<link rel="stylesheet" type="text/css" th:href="@{/css/notosanskr.css}">
+<link rel="stylesheet" type="text/css" th:href="@{/summernote/jquery-ui.css}">
+<link rel="stylesheet" type="text/css" th:href="@{/css/font-awesome.min.css}">
+<link rel="stylesheet" type="text/css" th:href="@{/css/notosanskr.css}">
+<link rel="stylesheet" type="text/css" th:href="@{/summernote/jquery-ui.css}">
+<link rel="stylesheet" type="text/css" th:href="@{/css/board.css}">
+<link rel="stylesheet" type="text/css" th:href="@{/css/board_mobile.css}">
+<link rel="stylesheet" type="text/css" th:href="@{/css/content.css}">
+<link rel="stylesheet" type="text/css" th:href="@{/css/custom.css}">
+<link rel="stylesheet" type="text/css" th:href="@{/css/jquery.datetimepicker.css}">
+<link rel="stylesheet" type="text/css" th:href="@{/css/jquery-ui.css}">
+<link rel="stylesheet" type="text/css" th:href="@{/css/layout.css}">
+<link rel="stylesheet" type="text/css" th:href="@{/css/main.css}">
+<link rel="stylesheet" type="text/css" th:href="@{/css/mobile.css}">
+<link rel="stylesheet" type="text/css" th:href="@{/css/montserrat.css}">
+<link rel="stylesheet" type="text/css" th:href="@{/css/slick.css}">
+<link rel="stylesheet" type="text/css" th:href="@{/css/slick-theme.css}">
+<link rel="stylesheet" type="text/css" th:href="@{/css/swiper.css}">
+<link rel="stylesheet" type="text/css" th:href="@{/css/swiper.min.css}">
+<link rel="stylesheet" type="text/css" th:href="@{/summernote/bootstrap-3.3.2-dist/css/bootstrap.css}">
+<link rel="stylesheet" type="text/css" th:href="@{/summernote/bootstrap-3.3.2-dist/js/bootstrap.js}">
+<link rel="stylesheet" type="text/css" th:href="@{/summernote/jquery-ui.css}">
+<link rel="stylesheet" type="text/css" th:href="@{/summernote/summernote.css}">
+<link rel="stylesheet" type="text/css" th:href="@{/ui/1.12.1/themes/base/jquery-ui.css}">
+<link rel="stylesheet" th:href="@{/code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css}">
+<!-- less 색상 -->
+<link rel="stylesheet/less" type="text/css" th:href="@{/css/pro_color.less}">
+<script type="text/javascript" th:src="@{/js/less.min.js}"></script>
+
+<script type="text/javascript" th:src="@{/js/function.js}"></script>
+<script type="text/javascript" th:src="@{/js/menu.js}"></script>
+<script type="text/javascript" th:src="@{/js/calendar_beans_v2.0.js}"></script>
+<script type="text/javascript" th:src="@{/js/jquery-1.8.0.min.js}"></script>
+<script type="text/javascript" th:src="@{/js/dev.js}"></script>
+<script type="text/javascript" th:src="@{/js/vizenweblog.js}"></script>
+<script type="text/javascript" th:src="@{/js/vizen_calendar.js}"></script>
+
+<!-- 달력 변경 jquery.js 버젼업, datetimepicker.full.js 달력 js -->
+<script th:src="@{/js/jquery.js}"></script>
+<script th:src="@{/js/jquery.datetimepicker.full.js}"></script>
+<!-- 달력 변경 끝 -->
+
+<script type="text/javascript" th:src="@{/js/jquery.form.js}"></script>
+<script th:src="@{/summernote/summernote.js}"></script>
+<script th:src="@{/summernote/lang/summernote-ko-KR.js}"></script>
+
+<!-- include summernote css/js-->
+
+<!-- bx슬라이더 -->
+<script type="text/javascript" src="@{/js/jquery.bxslider.min.js}"></script>
+
+
+<!-- 슬릭슬라이더 -->
+<link rel="stylesheet" href="@{/css/slick.css}" type="text/css" media="all" />
+<link rel="stylesheet" href="@{/css/slick-theme.css}" type="text/css" media="all" />
+<script th:src="@{/js/slick.js}" type="text/javascript" charset="utf-8"></script>
+<script th:src="@{/js/slick.min.js}" type="text/javascript" charset="utf-8"></script>
+
+<script type="text/javascript" th:src="@{/js/function_jquery.js}"></script>
+
+<script type="text/javascript" th:src="@{/smarteditor/js/HuskyEZCreator.js}"></script>
+<script type="text/javascript" th:src="@{/js/jquery.colorPicker.js}"></script>
+<script type='text/javascript' th:src='@{/js/validationBind.js}'></script>
+
+<!-- JQuery ui -->
+<link rel='stylesheet' th:href='@{/css/jquery-ui.css}' type='text/css' media='all' />
+<script type="text/javascript" th:src="@{/js/jquery-ui.js}"></script>
+
+<script th:src="@{/js/swiper.js}" type="text/javascript" charset="utf-8"></script>
+<script th:src="@{/js/swiper.min.js}" type="text/javascript" charset="utf-8"></script>
+
+<!-- viewport 480px -->
+<script type='text/javascript' th:src='@{/js/viewport.js}'></script> 
+
+<link rel="stylesheet" href="/css/board_mobile.css" type="text/css" media="all" /> 
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-MN42H8F6');</script>
+<!-- End Google Tag Manager -->
+
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-11300096246"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'AW-11300096246');
+</script>
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window,document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1223866951603624');
+fbq('track', 'PageView');
+</script>
+<noscript>
+<img height="1" width="1"
+src="https://www.facebook.com/tr?id=1223866951603624&ev=PageView
+&noscript=1"/>
+</noscript>
+
+</head>
+<body>
+ <!-- header -->
+ <header th:replace="~{/header::headerFragment}"></header>
+<!-- header // -->
+<!-- 퀵메뉴 -->
+ <div th:replace="~{/sidebar::sidebarFragment}"></div>
+<!-- 퀵메뉴 //-->
+<!-- 내용 -->
+<th:block layout:fragment="content"></th:block>
+<!-- 풋터 -->
+ <footer th:replace="~{/footer::footerFragment}"></footer>
+<!-- 풋터 //-->
+<!-- bootstrap JS -->  
+<script th:src="@{/bootstrap/bootstrap.min.js}"></script>
+</body>
+</html>

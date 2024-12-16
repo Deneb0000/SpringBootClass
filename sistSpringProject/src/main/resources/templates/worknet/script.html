@@ -1,0 +1,244 @@
+<script th:fragment="scriptFragment" type="text/javascript">
+	$(window).load(function(){
+		$("#blist table tr td").mouseenter(function(){
+		$(this).parent("tr").addClass("on");
+		});
+		$("#blist table tr td").mouseleave(function(){
+			$("#blist table tr").removeClass("on");
+		});		
+	});	
+	
+	
+	/* 현재 디렉토리를 구해서 menu마다 넣어놓은 class 이름이랑 같을때, active 클래스 추가 */
+	$(window).on("load",function(){
+		var url = window.location.pathname;
+    var urlPathname = url.substring(0, url.substring(1).lastIndexOf('/') + 2);
+
+    // 모든 서브메뉴 숨기기
+    $(".depth_custom > li > ul").hide();
+
+    // 메뉴 클릭 시 열리고 닫히는 동작
+    $(".depth_custom > li > a").on("click", function () {
+    
+	$(".depth_custom > li > a").removeClass("active");
+	$(".depth_custom > li > ul").css("display", "none");
+	$(this).addClass("active");
+	$(this).next("ul").css("display", "block");
+        
+    });
+    
+    //모바일창(좁은창)에서 로그인/아웃 할수 있는 버튼
+    $("#toggle_mobile_nav > i").on("click", function(){
+    $(".wrapper").toggleClass("mobile-nav-open");
+    });
+
+    // 활성화된 메뉴 강조 및 열기
+    $(".depth_custom > li > ul > li > a").each(function () {
+        var $this = $(this);
+        var parentLi = $this.parent(); // 현재 `<li>` 요소
+        if (parentLi.attr('class') === urlPathname) {
+            $this.css("color", "#307dd4"); // 활성화된 메뉴 강조
+            parentLi.parent().addClass("in").show(); // 메뉴 펼침 및 표시
+            parentLi.parent().parent().find(">a").addClass("active active_important"); // 상위 메뉴 활성화
+        }
+    });
+    
+    //닫기버튼 호버명령어
+        //닫기버튼 호버명령어
+    $(".side-nav").on("mouseenter", function(){
+    	$(".wrapper").addClass("sidebar-hover");
+    });
+    
+     $(".side-nav").on("mouseleave", function(){
+     	$(".wrapper").removeClass("sidebar-hover");
+  });
+
+});
+
+
+		/* 모바일에서 메뉴 펼쳤을때 컨텐츠 영역 선택하면 메뉴 닫히게*/
+		$("#toggle_nav_btn").on("click", function() {
+        	$(".wrapper").toggleClass("slide-nav-toggle");
+    	});
+ 
+		// 메뉴효과
+		$('#menu8_2 a').addClass('off');
+		$('#menu8_3 a').addClass('off');
+
+
+$(window).load(function() {
+	jQuery.datetimepicker.setLocale('ko');		// 달력 언어 설정
+	var mobileKeyWords = new Array('iPhone', 'iPod', 'BlackBerry', 'Android', 'Windows CE', 'LG', 'MOT', 'SAMSUNG', 'SonyEricsson'); 
+	for (var word in mobileKeyWords){ 
+		if (navigator.userAgent.match(mobileKeyWords[word]) != null){ 
+			// 모바일
+			$("div#menu > ul > li > a").attr("href","javascript:;");
+		} 
+	} 	
+});
+
+
+function checkId(){
+	var id = $("#id").val();
+	window.open ('/member/id_check.jsp?id='+id, 'newwin' , 'toolbar=0, location=0, status=0, menubar=0, scrollbars=0, resizable=0, top=0, left=0, width=504, height=317');		
+}
+
+
+function searchzipcode(){
+	var urlname = "/zipcode/search.jsp";
+	window.open(urlname,"browse_org","height=369,width=506,menubar=no,directories=no,resizable=no,status=no,scrollbars=no");
+}
+
+
+function helpComment(type, input) {
+	var ev = window.event;	
+	var mousePos = mouseCoords(ev);	
+	
+	if($("#"+input).width()+mousePos.x > $(window).width()){
+		mousePos.x = mousePos.x -$("#"+input).width(); 
+	}
+
+	document.getElementById(input).style.top = mousePos.y+"px";
+    document.getElementById(input).style.left = mousePos.x+"px";
+	document.getElementById(input).style.visibility = type;
+}
+
+
+function mouseCoords(ev) {	
+	if(ev.pageX || ev.pageY){		
+		return {x:ev.pageX, y:ev.pageY};	
+	}	
+	return {
+		x:ev.clientX + document.body.scrollLeft - document.body.clientLeft,
+		y:ev.clientY + document.body.scrollTop  - document.body.clientTop	
+	};
+}
+
+
+jQuery(document).ready(function(){
+	jQuery(".helpComment").filter("#Registdate").css("margin-left","15px");
+	jQuery(".helpComment").hover(
+		function(){
+			var id = jQuery(this).attr("id");
+			helpComment("visible","layer"+id);
+		},function(){
+			var id = jQuery(this).attr("id");
+			$("#layer"+id).css("visibility","hidden");
+		}
+	);
+	
+	
+	jQuery(".helpComment").focusin(function(){
+		var id = jQuery(this).attr("id");
+		helpComment("visible","layer"+id);
+	});
+			
+			
+	jQuery(".helpComment").focusout(function(){
+		var id = jQuery(this).attr("id");
+		$("#layer"+id).css("visibility","hidden");
+	});
+});
+
+
+function popRecharge() {
+	var str,width,height;
+	str="'toolbar=no,location=no,directories=no,status=no,menubar=no,scrollbars=yes,resizable=no,copyhistory=no,";
+	str=str+"width=1024";
+	str=str+",height=768',top=100,left=100";
+	window.open("https://hosting.vizensoft.com/customer/indexPayment.jsp?projectfk=3119&costomerfk=3038&tran_id=9999",'recharge',str);
+}
+
+
+$(function(){
+	$.ajax({
+		url: "https://hosting.vizensoft.com/customer/rechargeJquery.jsp?projectfk=3119&costomerfk=3038&tran_id=9999", // 클라이언트가 요청을 보낼 서버의 URL 주소
+		type: "GET",                             // HTTP 요청 방식(GET, POST)
+		dataType: "jsonp",                         // 서버에서 보내줄 데이터의 타입
+		success: function(data){
+			$("#recharge").text(data);
+		},
+		error : function(error){
+			console.log(error);
+		}
+	});
+});
+
+
+function popMaintenance() {
+	var str,width,height;
+	str="'toolbar=no,location=no,directories=no,status=no,menubar=no,scrollbars=yes,resizable=no,copyhistory=no,";
+	str=str+"width=1024";
+	str=str+",height=768',top=100,left=100";
+
+	window.open("http://vizen.vizensoft.com/site/maintenance/customer/index.jsp?customerfk=3038&projectfk=3119",'maintenance',str);
+}
+
+
+function popMaintenance() {
+	var str,width,height;
+	str="'toolbar=no,location=no,directories=no,status=no,menubar=no,scrollbars=yes,resizable=no,copyhistory=no,";
+	str=str+"width=1024";
+	str=str+",height=768',top=100,left=100";
+
+	window.open("http://vizen.vizensoft.com/site/maintenance/customer/index.jsp?customerfk=3038&projectfk=3119",'maintenance',str);
+}
+
+
+function OpenWinCount(URL,width,height) {
+
+	var str;
+	str="'toolbar=yes, location=yes, directories=yes, status=no, menubar=yes, scrollbars=yes,resizable=yes,copyhistory=no,";
+	str=str+"width="+width;
+	str=str+",height="+height+"',top=100,left=100";
+
+	window.open(URL,'_blank');
+}
+
+
+var parent = $(".parent");
+$(document).ready(function(){
+	if(isMobileTablet()) $(".parent").attr("href", "javascript: void(0); ");
+
+	// 1depth 메뉴들
+	
+	//현재 주소
+	// 주소중 manage이후 폴더 경로 자르기 ex) /manage/board/index.jsp -> board
+	var curUrl = document.location.pathname;
+	curUrl = location.pathname.substring(0,  location.pathname.lastIndexOf("/") ).substring( location.pathname.substring(0,  location.pathname.lastIndexOf("/") ).lastIndexOf("/"));
+	
+	$(".parent").parent().find("a").each(function(){
+		$(this).find("span").removeClass("bg");
+
+		// 1depth 메뉴 href 담기
+		href = $(this)[0].href;
+
+		// 가장 가까운 부모 디렉토리명
+		href = href.substring(0,  href.lastIndexOf("/") ).substring( href.substring(0,  href.lastIndexOf("/") ).lastIndexOf("/"));
+		
+		// 현재 주소에서 href가 포함 되어 있으면 그 메뉴에 배경색 지정
+		
+		if(curUrl == href){
+			$(this).parents('li:last').find(".parent span").addClass("bg");
+		}
+	});
+	
+	
+	// 방문자 통계 클릭시 메뉴 유지
+	parent.click(function(){
+		// 1depth 메뉴 href 담기
+		href = $(this)[0].href;
+		
+		if(href.indexOf("OpenWinCount") >= 0){
+			parent.find("span").removeClass("bg");
+			$(this).find("span").addClass("bg");
+		}
+	});
+
+
+	// 메뉴 수에 맞게 width 값 수정.
+	$("ul.menu > li").css("width", (100 / $("ul.menu > li").length) + "%");
+});
+
+
+</script>

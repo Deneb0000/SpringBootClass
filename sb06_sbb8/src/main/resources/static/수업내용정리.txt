@@ -1,0 +1,24 @@
+[수업내용정리]
+Querydsl
+	타입 안정성
+	자바 코드 쿼리 작성 가능
+	동적 쿼리 작성 가능
+	
+	
+	
+	''s' 질문 제목
+	'c' 질문 내용
+	'sc' 질문 제목 + 질문 ㅐ용
+	
+	1) build.gradle 성정
+	2) Window > Show View > 'Gradle Tasks' > 프로젝트 리플레쉬 > 그래이들 리플레쉬 > 폴더 > build > clean
+	3) src/main/generated 폴더가 안보이면
+	
+	*필요없는 임포트 구문 삭제하는 설정 찾아보기
+
+https://aboard-powder-d1e.notion.site/STS-import-15b6d1eb1ade80a5a35ae80c52e4a3c8
+STS에서 사용하지 않는 import 자동삭제하는 방법
+
+
+월)
+spring boot 총정리

@@ -1,0 +1,79 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<title>쌍용교육센터</title>
+<meta http-equiv="X-UA-compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width,initial-scale=1.0" />
+<meta name="description" content="페이지설명">
+<meta name="keywords" content="검색키워드등록">
+<meta name="classification" content="검색사이트 카테고리 등록">
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet" />
+<link th:href="@{/manage/css/nanumgothic.css}" rel="stylesheet" type="text/css" />
+<link th:href="@{/manage/css/notosanskr.css}" rel="stylesheet" type="text/css" />
+<link th:href="@{/css/poppins.css}" rel="stylesheet" type="text/css" />
+<link rel='stylesheet' href='//cdn.jsdelivr.net/font-kopub/1.0/kopubdotum.css'>
+<link href='//cdn.rawgit.com/openhiun/hangul/14c0f6faa2941116bb53001d6a7dcd5e82300c3f/nanumbarungothic.css' rel='stylesheet' type='text/css'>
+<link th:href="@{/manage/css/basic.css}" rel="stylesheet" type="text/css" />
+<link th:href="@{/manage/css/layout.css}" rel="stylesheet" type="text/css" />
+<link th:href="@{/manage/css/board.css}" rel="stylesheet" type="text/css" />
+<link th:href="@{/manage/css/manage.css}" rel="stylesheet" type="text/css" />
+<link th:href="@{/css/colorPicker.css}" rel="stylesheet" type="text/css" />
+<!-- <link th:href="@{/summernote/jquery-ui.css}" rel="stylesheet" type="text/css" /> -->
+<link rel="stylesheet" th:href="@{/js/jstree_/css/style.min.css}" />
+<link rel="stylesheet" th:href="@{/css/jquery.datetimepicker.css}" type="text/css" media="all" />
+<script type="text/javascript" th:src="@{/js/function.js}"></script>
+<script type="text/javascript" th:src="@{/js/menu.js}"></script>
+<script type="text/javascript" th:src="@{/js/calendar_beans_v2.0.js}"></script>
+<script type="text/javascript" th:src="@{/js/jquery-1.8.0.min.js}"></script>
+<script th:src="@{/js/jquery.js}"></script>
+<script th:src="@{/js/jquery.datetimepicker.full.js}"></script>
+<script th:src="@{/js/dev.js}"></script>
+<script th:src="@{/js/jstree_/js/jstree.min.js}"></script>
+<link th:href="@{/summernote/bootstrap-3.3.2-dist/css/bootstrap.css}" rel="stylesheet">
+<!-- <link th:href="@{/summernote/summernote.css}" rel="stylesheet"> -->
+<script th:src="@{/summernote/bootstrap-3.3.2-dist/js/bootstrap.js}"></script>
+<script type="text/javascript" th:src="@{/js/jquery.form.js}"></script>
+<!-- <script th:src="@{/summernote/summernote.js}"></script> -->
+<!-- <script th:src="@{/summernote/lang/summernote-ko-KR.js}"></script> -->
+<script type="text/javascript" th:src="@{/js/function_jquery.js}"></script>
+<script type="text/javascript" th:src="@{/smarteditor/js/HuskyEZCreator.js}"></script>
+<script type="text/javascript" th:src="@{/js/jquery.colorPicker.js}"></script>
+<script type='text/javascript' src='/js/validationBind.js'></script>
+<!-- <link rel="stylesheet/less" type="text/css" th:href="@{/manage/css/color.less}"> -->
+<script type="text/javascript" th:src="@{/manage/include/less.min.js}"></script>
+<link th:href="@{/manage/template/dist/css/style.css}" rel="stylesheet" type="text/css">
+<link th:href="@{/manage/template/css/layout.css}" rel="stylesheet" type="text/css" />
+<link th:href="@{/manage/template/css/content.css}" rel="stylesheet" type="text/css" />
+	<script th:src="@{/manage/template/dist/js/init.js}"></script>
+	<script th:src="@{/manage/template/dist/js/dashboard-data.js}"></script>
+	<script th:src="@{/manage/template/dist/js/dropdown-bootstrap-extended.js}"></script>
+	<script th:src="@{/manage/template/dist/js/jquery.slimscroll.js}"></script>
+	<link th:href="@{/summernote/bootstrap-3.3.2-dist/css/bootstrap.css}" rel="stylesheet">
+<link th:href="@{/summernote/summernote.css}" rel="stylesheet">
+</head>
+<body>
+<div class="wrapper theme-2-active pimary-color-blue">
+	<!-- Top -->
+	 <nav th:replace="~{/worknet/top::topFragment}"></nav>	
+	<!-- Top// -->
+	
+	<!-- leftSidebar -->
+	 <div th:replace="~{/worknet/leftSidebar::leftSidebarFragment}"></div>	
+	<!-- leftSidebar// -->
+	
+
+	<!-- 내용 -->
+	<th:block layout:fragment="content"></th:block>
+	
+	<!-- 풋터 -->
+ <footer th:replace="~{/worknet/footer::footerFragment}"></footer>
+<!-- 풋터 //-->
+
+	<!-- script -->
+	 <div th:replace="~{/worknet/script::scriptFragment}"></div>	
+	<!-- script// -->
+</div>
+</body>
+</html>

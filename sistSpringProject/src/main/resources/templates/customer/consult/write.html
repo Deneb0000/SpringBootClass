@@ -1,0 +1,207 @@
+<html layout:decorate="~{/customer/layout}"> 
+<div layout:fragment="content">
+<!-- sub_common -->
+<div class="sub_common">
+	<div class="sub_visual">
+		<div class="text">
+			<h6 class="mont">Ssangyong Institute of System Technology</h6>
+			<h2></h2>
+			<i></i>
+		</div>
+	</div>
+	<div class="sub_route">
+		<div class="inner">
+			<div class="home">
+				<a th:href="@{/index}" class="mont">
+					<img th:src="@{/img/sub_route_home.png}" alt="home" /> HOME
+				</a>
+				<i></i>
+			</div>
+			<ul>
+				<li>
+					<a th:href="@{/customer/notice/index}">고객센터</a>
+				</li>
+				<li>
+					<a th:href="@{/customer/consult/write}">교육문의</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+</div>
+
+<script>
+$(document).ready(function () {
+    var url = window.location.pathname;
+    var fileName = url.substring(url.lastIndexOf('/') + 1) || '';
+    var isForDev = ["index.jsp", "read.jsp", "edit.jsp", "write.jsp", "password.jsp"].includes(fileName);
+
+    $("#header .gnb ul.depth02 li a").each(function () {
+        var href = $(this).attr("href");
+        var linkPath = new URL(href, window.location.origin).pathname;
+
+        if (linkPath === url || (isForDev && linkPath.startsWith(url.substring(0, url.lastIndexOf('/') + 1)))) {
+            var idx = $(this).closest('ul').parent().index();
+            var title = $(this).closest('ul').prev('a').text();
+            var link = $(this).closest('ul').prev('a').attr('href');
+            var depth02 = $(this).parent().html();
+
+            $('.sub_visual').css("background-image", `url('/img/sub_visual0${idx || 1}.jpg?ver')`);
+            $('.sub_visual .text h2').text(title);
+            if (!$('.sub_route ul').find(`a[href="${link}"]`).length) {
+                $('.sub_route ul').append('<li><a href="' + link + '">' + title + '</a></li>');
+            }
+            $('.sub_route ul').append('<li>' + depth02 + '</li>');
+        }
+    });
+});
+
+</script>
+
+<!-- <script>
+	$(document).ready(function(){
+		var url = window.location.pathname;
+		var urlPathname = url.substring( 0, url.substring(1).indexOf('/') + 2 );
+		var fileName = url.substring(url.lastIndexOf('/') + 1);
+		var isForDev = fileName == "index.jsp" || fileName == "read.jsp" || fileName == "edit.jsp" || fileName == "write.jsp" || fileName == "password.jsp";
+		
+		// sub_common
+		$("#header .gnb ul.depth02 li a").each(function() {
+			if ( $(this).attr("href") == url ){
+				var idx = $(this).parent().parent().parent().index();
+				var title = $(this).parent().parent().parent().find('>a').text(); // depth01
+				var link = $(this).parent().parent().parent().find('>a').attr('href'); // depth01 링크
+				var depth02 = $(this).parent().html(); // depth02
+
+				$('.sub_visual').css("background-image", "url('/img/sub_visual0" + idx + ".jpg?ver')");
+				$('.sub_visual .text h2').text( title );
+				$('.sub_route ul').append('<li><a href="' + link + '">' + title + '</a></li>');
+				$('.sub_route ul').append("<li>" + depth02 + "</li>");
+			}else if ( isForDev ){
+				if ( $(this).attr("href").indexOf( url.substring(0, url.lastIndexOf('/')+1 ) ) > -1 ){
+					var idx = $(this).parent().parent().parent().index();
+					var title = $(this).parent().parent().parent().find('>a').text(); // depth01
+					var link = $(this).parent().parent().parent().find('>a').attr('href'); // depth01 링크
+					var depth02 = $(this).parent().html(); // depth02
+
+					$('.sub_visual').css("background-image", "url('/img/sub_visual0" + idx + ".jpg?ver')");
+					$('.sub_visual .text h2').text( title );
+					$('.sub_route ul').append('<li><a href="' + link + '">' + title + '</a></li>');
+					$('.sub_route ul').append("<li>" + depth02 + "</li>");
+				}
+			}
+		});
+	});
+</script> -->
+<!-- sub_common // -->
+
+<div class="job_con">
+	<div class="inner">
+		<div class="sub_tit">
+			<h3>교육문의</h3>
+		</div>
+	</div>
+</div>
+
+	<!-- 프로그램시작 -->
+	<form name="frm" id="frm" th:action="@{/consult/write}" method="post" th:object="${writeForm}">
+	<div class="programCon">
+		
+		<div class="join">
+			<div class="joinTop">
+				<div th:replace="~{/customer/termsWrite :: termsWriteFragment}"></div>
+				<div class="jcheck">
+					<input type="checkbox" data-value="개인정보취급방침에 동의해주세요." 
+					id="agree02" name="agree02" value="" 
+					title="개인정보취급방침에 동의합니다 체크해주세요." checked="checekd"/>
+					<label for="agree02"> 개인정보취급방침에 동의합니다.</label>
+				</div>
+				<!-- //jcheck -->
+			</div>
+		</div>		
+		
+		<!-- //join -->
+		
+		<div class="writeForm">
+			<table>
+				<colgroup>
+					<col class="writeForm_col01" />
+					<col width="*" />
+				</colgroup>
+				<tr>
+					<th>작성자</th>
+					<td>
+						<input data-value="작성자를 입력해주세요." id="name" name="name" class="inputTxt inputName" type="text" th:field="*{writer}" value=""  />
+					</td>
+				</tr>
+				<tr>
+					<th>이메일</th>
+					<td class="mail_type">
+						<input data-value="이메일을 입력해주세요." name="email1" id="email1" class="inputEmail" type="text" value="" th:field="*{email1}"/>
+						<span class="email_txt">@</span>
+						<select class="selecEmail" name="email2" id="email2" data-value="이메일을 선택해주세요." th:field="*{email2}">
+							<option value="">선택해주세요.</option>
+							<option value='직접 입력'>직접 입력</option>
+							<option value='naver.com'>naver.com</option>
+							<option value='daum.net'>daum.net</option>
+							<option value='gmail.com'>gmail.com</option>
+							<option value='hotmail.com'>hotmail.com</option>
+							<option value='nate.com'>nate.com</option>
+							<option value='korea.com'>korea.com</option>
+						</select>
+						
+					</td>
+				</tr>
+				<tr>
+					<th>비밀번호</th>
+					<td>
+						<input data-value="비밀번호를 입력해주세요." name="password" id="password" class="inputPass" type="password"  th:field="*{password}"  />
+					</td>
+				</tr>
+				<tr>
+					<th>연락처</th>
+					<td>
+						
+						<input type="text" name="tel" id="tel" value="" onkeyup="isNumberOrHyphen(this);" onblur="cvtUserPhoneNumber(this);" data-value="" th:field="*{cInfo}" />
+						
+						
+					</td>
+				</tr>
+				<tr>
+					<th>휴대폰</th>
+					<td>
+						
+						<input type="text" name="cell" id="cell" value="" onkeyup="isNumberOrHyphen(this);" onblur="cvtUserPhoneNumber(this);"  data-value="휴대폰 번호를 입력해주세요." th:field="*{phone}"  />
+						
+						
+					</td>
+				</tr>
+				<tr>
+					<th>제목</th>
+					<td class="addr_td">
+						<input data-value="제목를 입력해주세요." type="text" id="title" class="inputTit" name="title" value="" th:field="*{subject}" />
+						<span class="label_wrap"><input type="checkbox" name="secret" id="secret" value="1" /> <label for="secret">비공개</label></span>
+					</td>
+				</tr>
+				<tr>
+					<th>내용</th>
+					<td><textarea name="contents" id="contents" data-value="내용을 입력해주세요." cols="30" rows="10" th:field="*{content}"></textarea></td>
+				</tr>
+				
+				
+				
+				
+			</table>
+		</div>
+		<div class="writeForm_btn">
+			<a href="javascript:;" id="w_btn" onclick="goSave(this)">확인</a>
+			<a href="index.jsp?reqPageNo=1" >취소</a>
+		</div>
+		<input type="hidden" name="cmd" id="cmd" value="write"/>
+		<input type="hidden" name="email" id="email" value=""/>
+		
+		<input type="hidden" name="branch_fk" id="branch_fk" value="0"/>
+		
+	</div>
+	</form>
+	</div>
+</html>

@@ -1,0 +1,48 @@
+[수업내용정리]
+sb06_sbb6
+1. 수정과 삭제 기능 - 질문, 답변 수정 삭제 기능
+	엔티티 - 수정날짜
+2. 질문 상세 - 질문 수정 버튼 추가
+	질문관련 컨트롤러
+	create.html -> 수정코딩 추가
+	
+	컨트롤러와 서비스 코딩 수정
+
+	질문 삭제하는 기능
+	detail.html -> 삭제 버튼
+	
+	플래그먼트라는 조각으로 만들자.
+	<script type='text/javascript'>
+const delete_elements = document.getElementsByClassName("delete");
+Array.from(delete_elements).forEach(function(element) {
+    element.addEventListener('click', function() {
+        if(confirm("정말로 삭제하시겠습니까?")) {
+            location.href = this.dataset.uri;
+        };
+    });
+});
+</script>
+
+		layout.html
+
+	스크립트 코딩 조각
+	
+	질문삭제 컨트롤러
+	질문삭제 서비스
+
+	
+	-답변 수정/삭제 작업
+	
+수정된 일자 출력
+
+(내일)
+좋아요 기능 / 추천 기능 구현
+앵커 기능
+마크다운 적용
+검색 기능 조건 (제목으로)
+
+모래)
+커리 DSL
+
+월)
+spring boot 총정리

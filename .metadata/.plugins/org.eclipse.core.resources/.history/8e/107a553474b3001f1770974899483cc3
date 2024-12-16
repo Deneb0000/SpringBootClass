@@ -1,4 +1,0 @@
-1. controller.MainController.java 추가
-	/index => /index.html 요청 처리.
-	
-2.	JPA 사용
